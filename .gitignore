@@ -2,6 +2,7 @@
 build/
 dist/
 *.spec
+!.maincharacter.spec
 __pycache__/
 *.pyc
 .DS_Store
