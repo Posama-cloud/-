@@ -67,7 +67,7 @@ pip install opencv-python rumps
 
 ### 3. 运行程序
 
-确保项目根目录下存在 `image_0.png`（App 图标）和 `menubar_icon.png`（状态栏图标），然后：
+确保项目根目录下存在 `image_0.png`（App 图标），然后：
 
 ```bash
 python maincharacter.py

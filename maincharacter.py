@@ -6,8 +6,7 @@ import threading
 import subprocess
 
 # --- 配置 ---
-MENUBAR_ICON_PATH = "menubar_icon.png"
-APP_LOGO_PATH = "image_0.png"
+APP_ICON_PATH = "image_0.png"
 
 # 正式间隔：3600 秒（1小时）；测试时可改为较小值（如 10）
 DEFAULT_INTERVAL_SECONDS = 3600
@@ -21,8 +20,8 @@ CONFIRM_FRAMES = 5
 
 class SedentaryReminderApp(rumps.App):
     def __init__(self):
-        if os.path.exists(MENUBAR_ICON_PATH):
-            super(SedentaryReminderApp, self).__init__("", icon=MENUBAR_ICON_PATH)
+        if os.path.exists(APP_ICON_PATH):
+            super(SedentaryReminderApp, self).__init__("", icon=APP_ICON_PATH)
         else:
             super(SedentaryReminderApp, self).__init__("久坐")
 
@@ -58,7 +57,7 @@ class SedentaryReminderApp(rumps.App):
             message="久坐提醒助手已在后台运行。\n\n程序将每隔一小时检测一次摄像头，若检测到您仍在座位上，将提醒您起来活动。",
             ok="我知道了",
             cancel="不再显示",
-            icon_path=APP_LOGO_PATH if os.path.exists(APP_LOGO_PATH) else None
+            icon_path=APP_ICON_PATH if os.path.exists(APP_ICON_PATH) else None
         )
 
         if response == 0:
@@ -78,7 +77,7 @@ class SedentaryReminderApp(rumps.App):
         rumps.alert(
             title="久坐提醒助手",
             message="一个通过摄像头检测您是否久坐的零成本工具。\n\n每隔一小时检测一次，有人则提醒活动，没人则自动重新计时。",
-            icon_path=APP_LOGO_PATH if os.path.exists(APP_LOGO_PATH) else None,
+            icon_path=APP_ICON_PATH if os.path.exists(APP_ICON_PATH) else None,
             ok="好的"
         )
 

@@ -37,7 +37,6 @@ if [ ! -d "${REPO_DIR}/dist/${APP_EXECUTABLE}" ]; then
     cd "${REPO_DIR}"
     pyinstaller --noconfirm --windowed \
         --add-data "image_0.png:." \
-        --add-data "menubar_icon.png:." \
         maincharacter.spec
     info "打包完成"
 fi
